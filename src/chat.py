@@ -46,7 +46,7 @@ if __name__ == "__main__":
             print('{util.bcolors.ITALICS}history: {util.bcolors.ENDC}', history_msg)
             
         user_msg = input(f"{util.bcolors.BOLD}>>> The user puts:\n{util.bcolors.ENDC}")
-        response, history_msg, extra = util.chat(user_msg, history_msg=history_msg, **args)
+        response, history_msg, extra, elapsed_time = util.chat(user_msg, history_msg=history_msg, **args)
         
         print(f"{util.bcolors.BOLD}>>> The bot answers:{util.bcolors.ENDC}")
         print(f"{util.bcolors.HEADER}{response}{util.bcolors.ENDC}")

@@ -49,7 +49,6 @@ class bcolors:
         self.MAGENTA = ''
         self.CYAN = ''
 
-    
 
 def timer(func):
     def wrapper(*args, **kwargs):
@@ -57,9 +56,10 @@ def timer(func):
         result = func(*args, **kwargs)
         end_time = time.time()
         elapsed_time = end_time - start_time
-        print(f"{bcolors.DIM}Elapsed time ({func.__name__}): {elapsed_time:.2f} sec{bcolors.ENDC}")
-        return result
+        # print(f"{bcolors.DIM}Elapsed time ({func.__name__}): {elapsed_time:.2f} sec{bcolors.ENDC}")
+        return (*result, float(f'{elapsed_time:.2f}'))
     return wrapper
+
 
 def parse_response(raw_response, mode='completion', verbose=0):
     """Extract the generated text from the response.
